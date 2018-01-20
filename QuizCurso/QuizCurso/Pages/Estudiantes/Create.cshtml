@@ -1,0 +1,49 @@
+@page
+@model QuizCurso.Pages.Estudiantes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Estudiante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Estudiante.Nombre" class="control-label"></label>
+                <input asp-for="Estudiante.Nombre" class="form-control" />
+                <span asp-validation-for="Estudiante.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estudiante.Apellido" class="control-label"></label>
+                <input asp-for="Estudiante.Apellido" class="form-control" />
+                <span asp-validation-for="Estudiante.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estudiante.Telefono" class="control-label"></label>
+                <input asp-for="Estudiante.Telefono" class="form-control" />
+                <span asp-validation-for="Estudiante.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estudiante.Correo" class="control-label"></label>
+                <input asp-for="Estudiante.Correo" class="form-control" />
+                <span asp-validation-for="Estudiante.Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear estudiante" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver a la lista de estudiantes</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

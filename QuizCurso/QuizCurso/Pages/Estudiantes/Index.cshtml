@@ -1,0 +1,49 @@
+@page
+@model QuizCurso.Pages.Estudiantes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Crear nuevo estudiante</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estudiante[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estudiante[0].Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estudiante[0].Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estudiante[0].Correo)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>     
+@foreach (var item in Model.Estudiante) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
